@@ -26,3 +26,14 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.root-container {
+  min-height: 100vh;
+}
+
+#login-form-container {
+  margin-top: 64px;
+}
+
+.login-form-input {
+  margin-bottom: 16px;
+}

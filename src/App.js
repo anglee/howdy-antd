@@ -1,24 +1,66 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import {
+    Button,
+    Card,
+    Col,
+    Icon,
+    Input,
+    Layout,
+    Row,
+} from 'antd';
 
-import { DatePicker } from 'antd';
+import './App.css';
 import 'antd/dist/antd.css';
+
+const { Header, Footer, Sider, Content } = Layout;
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-            <div>
-                <DatePicker />
-            </div>
-        </p>
+          <Layout className="root-container">
+              <Content>
+                <div id="login-form-container">
+                  <Card
+                      title="Administrator Login"
+                      style={{
+                          width: 380,
+                          margin: "0 auto"
+                      }}
+                  >
+                      <Row type="flex" justify="center">
+                          <Col
+                            className="login-form-input"
+                            span={22}
+                          >
+                              <Input
+                                  prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                                  placeholder="Enter Username"
+                              />
+                          </Col>
+                      </Row>
+                      <Row type="flex" justify="center">
+                          <Col
+                              className="login-form-input"
+                              span={22}
+                          >
+                              <Input
+                                  prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                                  placeholder="Enter Password"
+                                  type={"password"}
+                              />
+                          </Col>
+                      </Row>
+                      <Row>
+                          <Col>
+                              <Button>{"Login"}</Button>
+                          </Col>
+                      </Row>
+                  </Card>
+                </div>
+              </Content>
+          </Layout>
       </div>
     );
   }
